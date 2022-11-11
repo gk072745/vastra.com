@@ -10,11 +10,13 @@ import { BrowserRouter } from 'react-router-dom';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 
-<BrowserRouter>
 <AuthContextProvider>
+<BrowserRouter>
+
     <App />
-</AuthContextProvider>
+
 </BrowserRouter>
+</AuthContextProvider>
 
 );
 

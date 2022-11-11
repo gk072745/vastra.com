@@ -12,6 +12,7 @@ library.add(faMagnifyingGlass,faUser,faHeart,faBagShopping)
 
 
 export default function Navbar(){
+  const [q,setQ]=useState("")
  const focusRef=useRef(null)
  const [dropdwn,setdropdwn]=useState(false)
  const navigate=useNavigate()
@@ -23,10 +24,14 @@ export default function Navbar(){
    }
  }
 
+const searchData=()=>{
+navigate(`/Mens?page=1&type=&q=${q}`)
 
 
+}
 
-return <>
+
+return <div className={styles.stick}>
 
 <div className={styles.main}>
 
@@ -62,7 +67,15 @@ return <>
             <div ref={focusRef}>
                   <div>
                   <FontAwesomeIcon className={styles.icon} icon="fa-magnifying-glass" />
-                  <input onMouseEnter={()=>activeB(true)} onMouseLeave={()=>activeB(false)} type="text" placeholder="Search for products, brands and more" />
+                  <input onChange={(e)=>setQ(e.target.value)}  
+                  
+                  onKeyDown={(e) => {
+                    if (e.code === "Enter") {
+                     searchData()
+                    }
+                  }}
+                  
+                  onMouseEnter={()=>activeB(true)} onMouseLeave={()=>activeB(false)} type="text" placeholder="Search for products, brands and more" />
                   </div>
             </div>
             <div>
@@ -99,7 +112,7 @@ return <>
 </div>
           </div>
 
-                <div  onClick={()=>navigate("/wishlist")} className={styles.navpadding}>
+                <div  onClick={()=>navigate("/wishlist")} className={styles.navpadding} >
                 <FontAwesomeIcon icon="fa-heart" />
 <p>Wishlist</p>
                 </div>
@@ -125,5 +138,5 @@ return <>
 
 
 
-</>
+</div>
 }

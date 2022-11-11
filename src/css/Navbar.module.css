@@ -3,6 +3,14 @@ font-family: Whitney, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Hel
 font-weight: 500;
 }
 
+.stick{
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+    background-color: #fff;
+}
+
 .main{
     display: flex;
     margin: 0px 40px;
@@ -75,12 +83,12 @@ font-size: 12px;
 }
 
 .navpadding{
-    padding: 20px 0px;
-        border-bottom: 5px solid transparent;
+    padding: 15px 0px;
+    border-bottom: 5px solid transparent;
 
 }
 .profile{
-    padding: 20px 0px;
+    padding: 15px 0px;
     border-bottom: 5px solid transparent;
 }
 .navpadding:hover{
