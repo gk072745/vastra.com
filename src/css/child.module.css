@@ -1,0 +1,35 @@
+.flex{
+    display: flex;
+}
+
+.flex img{
+    width: 100%;
+    cursor: pointer;
+}
+.grid1{
+display: grid;
+grid-template-columns: repeat(5,1fr);
+}
+.grid1 img{
+    width: 100%;
+    cursor: pointer;
+}
+
+.grid2{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    }
+.grid2 img{
+        width: 100%;
+        cursor: pointer;
+    }
+
+
+.margins h1 {
+    text-align: left;
+    color: #3e4152;
+    font-weight: 500;
+   margin: 50px 0px;
+   margin-left: 50px;
+
+}

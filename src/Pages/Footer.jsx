@@ -7,7 +7,7 @@ let searches="Makeup  Dresses For Girls  T-Shirts  Sandals  Headphones  Babydoll
 export default function Footer(){
 
 
-    return <div style={{padding:"0px 100px"}}>
+ return <div style={{padding:"0px 100px",background:"#fafbfc"}}>
     
     <div className={styles.main}>
        <div>
@@ -88,7 +88,7 @@ export default function Footer(){
     
     <div className={styles.flexLinks}>
         {searches.trim().split("  ").map((el)=>{
-            return <><a className={styles.searches} href="/">{el}</a> | </>
+            return <div key={el+Math.random(100)}><a className={styles.searches} href="/">{el}</a> | </div>
         })}
     </div>
     

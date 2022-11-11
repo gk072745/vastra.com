@@ -2,15 +2,16 @@
 .main *{
  font-family: Whitney, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
  font-weight: 400;
- color:#696b79 ;
 
 }
+
 .main{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
   text-align: left;
   gap:0px 40px;
+  
 }
 .main>div{
     width: max-content;
