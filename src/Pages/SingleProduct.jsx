@@ -1,14 +1,17 @@
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import styles from "../css/singlePAge.module.css"
 import { AuthContext } from "../Context/AuthContextProvider";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useParams, useSearchParams } from "react-router-dom";
+import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faMagnifyingGlass,faUser,faHeart,faBagShopping,faTruck } from '@fortawesome/free-solid-svg-icons';
+import axios from "axios";
 library.add(faMagnifyingGlass,faUser,faHeart,faBagShopping,faTruck)
 
 
 export default function SingleP(){
+  const sizeRef=useRef(null)
+  const navigate=useNavigate()
     const {singlePageData}=useContext(AuthContext)
     const {images,title,subtitle,rating,rating_count,size,discounted_price,discount,strike_price}=singlePageData
     console.log(singlePageData)
@@ -67,21 +70,43 @@ export default function SingleP(){
         <p>SIZE CHART  &#62; </p>
       </div>
         <div className={styles.sizes}>
-        <button disabled={!size.includes("XS")} >26</button>
-         <button  disabled={!size.includes("S")}>27</button>
-         <button  disabled={!size.includes("M")}>28</button>
-         <button  disabled={!size.includes("L")}>30</button>
-         <button  disabled={!size.includes("XL")}>32</button>
-         <button  disabled={!size.includes("XXL")}>34</button>
+        <button onClick={()=>{sizeRef.current=size[0]}}  disabled={!size.includes("XS")} >26</button>
+         <button  onClick={()=>{sizeRef.current=size[1]}}   disabled={!size.includes("S")}>27</button>
+         <button  onClick={()=>{sizeRef.current=size[2]}}   disabled={!size.includes("M")}>28</button>
+         <button  onClick={()=>{sizeRef.current=size[3]}}   disabled={!size.includes("L")}>30</button>
+         <button  onClick={()=>{sizeRef.current=size[4]}}   disabled={!size.includes("XL")}>32</button>
+         <button  onClick={()=>{sizeRef.current=size[5]}}   disabled={!size.includes("XXL")}>34</button>
         </div>
 
         <div className={styles.cart}>
+    
+            <div onClick={()=>{
+              if(!sizeRef.current) return
+              axios({
+               method:"post",
+               url:"https://pacific-plains-94481.herokuapp.com/api/Checkout",
+               data:{
+                ...singlePageData,size:sizeRef.current
+               }
+            })
 
-            <div>
+            return navigate("/checkout/cart")
+            }}>
             <FontAwesomeIcon  style={{padding:"0px"}} icon="fa-bag-shopping" />
             <p>ADD TO BAG</p>
             </div>
-            <div>
+            <div onClick={()=>{
+              if(!sizeRef.current) return
+              axios({
+               method:"post",
+               url:"https://pacific-plains-94481.herokuapp.com/api/Wishlist",
+               data:{
+                ...singlePageData,size:sizeRef.current
+               }
+            })
+
+            return navigate("/Wishlist")
+            }}>
                <FontAwesomeIcon style={{padding:"0px"}} icon="fa-heart"/>
                <p>WISHLIST</p>
             </div>
@@ -97,7 +122,7 @@ export default function SingleP(){
           </div>
 
           <div className={styles.pincd}>
-            <input type="number" placeholder="Enter pincode" onKeyDown="return false" />
+            <input type="number" placeholder="Enter pincode" onKeyDown={()=>"return false" }/>
             <button>Check</button>
           </div>
           <p className={styles.pinrqs}>Please enter PIN code to check delivery time & Pay on Delivery Availability</p>
@@ -110,11 +135,8 @@ export default function SingleP(){
             <p>Try & Buy might be available</p>
           </div>
 
-
-          <div className={styles.offers}>
-             <div>
-                <p>BEST OFFERS</p>
-             </div>
+          <div className={styles.hr}>
+          <hr />
           </div>
       <div>
        

@@ -6,8 +6,9 @@ import ReactDOM from 'react-dom'
 import { Navigate, useNavigate } from "react-router-dom";
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faMagnifyingGlass,faUser,faHeart,faBagShopping} from '@fortawesome/free-solid-svg-icons';
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import "../Components/styles.css"
+import { AuthContext } from "../Context/AuthContextProvider";
 library.add(faMagnifyingGlass,faUser,faHeart,faBagShopping)
 
 
@@ -16,6 +17,7 @@ export default function Navbar(){
  const focusRef=useRef(null)
  const [dropdwn,setdropdwn]=useState(false)
  const navigate=useNavigate()
+ const {isAuth,setisAuth}=useContext(AuthContext)
  const activeB=(x)=>{
    if(x){
       focusRef.current.className=styles.activeB
@@ -88,11 +90,11 @@ return <div className={styles.stick}>
   <div>
     <b>Welcome</b>
     <p style={{fontWeight:"400"}}>
-    To access account and manage orders
+    {isAuth? "To remove access account":"To access account and manage orders"}
     </p>
    
    </div>
-  <button onClick={()=>navigate("/login")}>LOGIN/SIGNUP</button>
+    {isAuth? <button onClick={()=>setisAuth(false)}>LOGOUT</button>   :<button onClick={()=>navigate("/login")}>LOGIN/SIGNUP</button>}
 </div>
 
    <div onClick={()=>navigate("/bag")}>
