@@ -1,0 +1,101 @@
+.bc{
+    background-color: #fdeeef;
+    padding: 100px 0px;
+    height: 70vh;
+
+}
+
+.main{
+    width: 450px;
+    margin: auto;
+    background-color: rgb(255, 249, 249);
+}
+.main>div{
+    width: 100%;
+    
+}
+.main img{
+    width: 100%;
+    
+}
+
+.loginForm{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding:10px 40px;
+    width: 370px !important;
+
+}
+
+.heading{
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    color:#424553;
+    font-size: 18px;
+}
+
+.heading p{
+    font-weight: 300;
+}
+
+.mob{
+    display: flex;
+    gap: 10px;
+    margin: auto;
+    border-radius: 2px;
+    width: 100%;
+    color: rgb(163, 163, 163);
+    padding: 10px 10px;
+    border: 1px solid rgb(230, 230, 230);
+}
+.mob:hover{
+    border: 1px solid;
+}
+.mob input{
+    outline: none;
+    border: none;
+    width: 85%;
+    font-size: 16px;
+    color: rgb(70, 70, 70);
+    font-weight: 300;
+}
+
+.mob input::-webkit-outer-spin-button,
+.mob input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.terms, .trbl{
+     margin: 20px 0px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    line-height: 15px;
+
+}
+
+.terms>span,.trbl span{
+    color:#ff3f6c  ;
+    margin: 0px;
+    cursor: pointer;
+
+}
+.terms>p ,.trbl p{
+    font-weight: 400;
+    margin: 0px;
+    color: #636363;
+}
+
+.btn{
+    background-color: #ff3f6c;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    padding: 10px 0px;
+    cursor: pointer;
+}
+

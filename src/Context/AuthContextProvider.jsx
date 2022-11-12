@@ -5,7 +5,7 @@ import { createContext, useState } from "react"
 export const AuthContext=createContext()
 
 function AuthContextProvider({children}){
-    const [isAuth,setisAuth]=useState(true)
+    const [isAuth,setisAuth]=useState(false)
     const [singlePageData,setSinglePageData]=useState({})
     const login=()=>{
         setisAuth(true)
