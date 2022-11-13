@@ -34,9 +34,9 @@ A individual project built by Govind Kumawat (Me) in 5 days.
 
 ## Responsibilities 💪
 
-- Landing page UI consisting of navbar, animated image cards and authentications i.e.; Login & Register 
+- Landing page UI consisting of navbar, animated image cards,slider and authentications i.e.; Login & Register 
 - Paginations for each sub-sections
-- Implementation of JS With Context Api on authentications
+- Implementation of react With Context Api on authentications
 - payment, checkout done with using React Hook (State) concepts.
 
 
