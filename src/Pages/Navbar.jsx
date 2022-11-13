@@ -97,10 +97,10 @@ return <div className={styles.stick}>
     {isAuth? <button onClick={()=>setisAuth(false)}>LOGOUT</button>   :<button onClick={()=>navigate("/login")}>LOGIN/SIGNUP</button>}
 </div>
 
-   <div onClick={()=>navigate("/checkout/cart")}>
+   <div onClick={()=>navigate("/bag")}>
     <p>Orders</p>
    </div>
-   <div onClick={()=>navigate("/wishlist")}>
+   <div onClick={()=>navigate("/wishlish")}>
         <p>Wishlist</p>
    </div>
    <div>
@@ -114,11 +114,11 @@ return <div className={styles.stick}>
 </div>
           </div>
 
-                <div style={{cursor:"pointer"}} onClick={()=>navigate("/wishlist")} className={styles.navpadding} >
+                <div  onClick={()=>navigate("/wishlist")} className={styles.navpadding} >
                 <FontAwesomeIcon icon="fa-heart" />
 <p>Wishlist</p>
                 </div>
-                <div  style={{cursor:"pointer"}}  onClick={()=>navigate("/checkout/cart")} className={styles.navpadding}>
+                <div  onClick={()=>navigate("/bag")} className={styles.navpadding}>
                 <FontAwesomeIcon icon="fa-bag-shopping" />
                 <sup style={{padding:"2px 7px",fontSize:"10px",background:"#f16565",color:"white",borderRadius:"50px"}}>1</sup>
 <p>Bag</p>
