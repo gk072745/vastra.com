@@ -21,6 +21,7 @@ export default function Product({item,id}){
    setSinglePageData(item)
  }
 
+ 
     return <>
     <div className={styles.main} onMouseEnter={()=>setShowWish(true)} onMouseLeave={()=>setShowWish(false)}>
        <div  style={{width:"100%"}} >

@@ -13,9 +13,9 @@ import styles from "../css/Home.module.css"
     },[])
 
 
+
+   
     return <>
-   
-   
 <div className={styles.margins}>
 <h1>BEST BUYS</h1>   
    <div className={styles.ExlusiveB}>

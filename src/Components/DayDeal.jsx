@@ -13,9 +13,7 @@ export default function DayDeal(){
           }).then((res)=>setData(res.data))
     },[])
 
-
     return <>
-   
    
 <div className={styles.margins}>
 <h1>DEAL OF THE DAY</h1>   

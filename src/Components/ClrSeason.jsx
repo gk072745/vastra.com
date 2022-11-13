@@ -12,9 +12,7 @@ import styles from "../css/Home.module.css"
           }).then((res)=>setData(res.data))
     },[])
 
-
     return <>
-   
    
 <div className={styles.clrMargin} >
 <h1>COLOURS OF THE SEASON</h1>   

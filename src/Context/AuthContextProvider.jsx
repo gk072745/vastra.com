@@ -7,14 +7,9 @@ export const AuthContext=createContext()
 function AuthContextProvider({children}){
     const [isAuth,setisAuth]=useState(false)
     const [singlePageData,setSinglePageData]=useState({})
-    const login=()=>{
-        setisAuth(true)
-    }
-    const logout=()=>{
-        setisAuth(false)
-    }
+  
     
-    const value={isAuth,setisAuth,logout,login,singlePageData,setSinglePageData}
+    const value={isAuth,setisAuth,singlePageData,setSinglePageData}
 
     return (
 

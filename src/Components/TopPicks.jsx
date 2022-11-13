@@ -14,9 +14,7 @@ import { useNavigate } from "react-router-dom";
           }).then((res)=>setData(res.data))
     },[])
 
-
     return <>
-   
    
 <div className={styles.margins}>
 <h1>TOP PICKS</h1>   

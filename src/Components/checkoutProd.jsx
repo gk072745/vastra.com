@@ -21,8 +21,8 @@ const handleQnt=(q)=>{
   setTotalMrp((prev=>prev+mrp*(qnt+q)))
 
 }
+
     return <>
-    
     <div>
                             <div>
                                 <img src={images} alt="" />

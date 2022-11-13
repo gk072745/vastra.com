@@ -8,6 +8,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 
+
 export default function SwiperA(){
   const [data,setData]=useState([])
   const navigate=useNavigate()
@@ -17,6 +18,8 @@ export default function SwiperA(){
     url:"https://pacific-plains-94481.herokuapp.com/api/slideshow"
   }).then((res)=>setData(res.data))
   },[])
+
+  
     return (
         <>
           <Swiper
