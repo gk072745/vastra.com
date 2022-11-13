@@ -21,7 +21,28 @@ axios({
     url:"https://pacific-plains-94481.herokuapp.com/api/Checkout",
 }).then((res)=> setItems(res.data))
 },[])
-console.log(items)
+
+
+const removeFunc=(id,sell,mrp)=>{
+    axios({
+        method:"delete",
+        url:"https://pacific-plains-94481.herokuapp.com/api/Checkout/"+id,
+    
+    }).then((res)=>{
+
+        axios({
+            method:"get",
+            url:"https://pacific-plains-94481.herokuapp.com/api/Checkout",
+        }).then((res)=> setItems(res.data))
+
+    })
+
+    setTotal((prev)=>prev-sell)
+    setTotalMrp((prev)=>prev-mrp)
+
+ 
+}
+
     return <>
    <nav className={styles.nav}>
     <div>

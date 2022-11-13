@@ -14,7 +14,6 @@ export default function SingleP(){
   const navigate=useNavigate()
     const {singlePageData}=useContext(AuthContext)
     const {images,title,subtitle,rating,rating_count,size,discounted_price,discount,strike_price}=singlePageData
-    console.log(singlePageData)
 
 
     return <>

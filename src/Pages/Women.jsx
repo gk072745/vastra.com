@@ -34,8 +34,8 @@ export default function Women(){
     return <>
   <Swiperw/>    
    <BigDealW/>
-   {arr.map((data)=>{
-        return <WomensComponentMaker data={data}/>
+   {arr.map((data,id)=>{
+        return <WomensComponentMaker key={id} data={data}/>
     })}
     <div style={{margin:"100px"}}></div> 
     

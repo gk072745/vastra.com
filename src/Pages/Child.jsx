@@ -33,7 +33,7 @@ export default function Child(){
      <SwiperC/>
   {
     arr.map((data,id)=>{
- return    <ChildComponentMaker data={data} id={id} />
+ return    <ChildComponentMaker key={id} data={data} id={id} />
 
     })
   }
