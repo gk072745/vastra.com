@@ -14,8 +14,6 @@ export default function SingleP(){
   const navigate=useNavigate()
     const {singlePageData}=useContext(AuthContext)
     const {images,title,subtitle,rating,rating_count,size,discounted_price,discount,strike_price}=singlePageData
-
-
     return <>
     
       <div className={styles.main}>
@@ -87,9 +85,10 @@ export default function SingleP(){
                data:{
                 ...singlePageData,size:sizeRef.current
                }
+            }).then((res)=>{
+            return navigate("/checkout/cart")
             })
 
-            return navigate("/checkout/cart")
             }}>
             <FontAwesomeIcon  style={{padding:"0px"}} icon="fa-bag-shopping" />
             <p>ADD TO BAG</p>

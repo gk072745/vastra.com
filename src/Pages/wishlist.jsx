@@ -1,12 +1,13 @@
 import axios from "axios"
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
+import { AuthContext } from "../Context/AuthContextProvider"
 import styles from "../css/wishlist.module.css"
 
 
 
 export default function Wishlist(){
     const [items,setItems]=useState([])
-
+  const {setBag}=useContext(AuthContext)
 
     useEffect(()=>{
         axios({
@@ -28,6 +29,8 @@ const deleteFunc=(id)=>{
 }
 
 const moveTobag=(data,id)=>{
+  delete data.id
+  console.log(data)
   axios({
     method:"post",
     url:"https://pacific-plains-94481.herokuapp.com/api/Checkout",
@@ -36,6 +39,8 @@ const moveTobag=(data,id)=>{
     }
   }).then((res)=>{
     deleteFunc(id)
+    setBag((count)=>count+1);
+
   })
 }
 
