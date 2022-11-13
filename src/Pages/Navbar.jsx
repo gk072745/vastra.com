@@ -114,13 +114,13 @@ return <div className={styles.stick}>
 </div>
           </div>
 
-                <div  onClick={()=>navigate("/wishlist")} className={styles.navpadding} >
+                <div  style={{cursor:"pointer"}}  onClick={()=>navigate("/wishlist")} className={styles.navpadding} >
                 <FontAwesomeIcon icon="fa-heart" />
 <p>Wishlist</p>
                 </div>
-                <div  onClick={()=>navigate("/bag")} className={styles.navpadding}>
+                <div  style={{cursor:"pointer"}}  onClick={()=>navigate("/checkout/cart")} className={styles.navpadding}>
                 <FontAwesomeIcon icon="fa-bag-shopping" />
-                <sup style={{padding:"2px 7px",fontSize:"10px",background:"#f16565",color:"white",borderRadius:"50px"}}>{bag}</sup>
+                <sup style={{padding:"2px 7px",fontSize:"10px",background:"#f16565",color:"white",borderRadius:"50px"}}>{isAuth?0:bag}</sup>
 <p>Bag</p>
                 </div>
             </div>

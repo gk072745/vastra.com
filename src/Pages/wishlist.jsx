@@ -30,7 +30,6 @@ const deleteFunc=(id)=>{
 
 const moveTobag=(data,id)=>{
   delete data.id
-  console.log(data)
   axios({
     method:"post",
     url:"https://pacific-plains-94481.herokuapp.com/api/Checkout",
@@ -58,7 +57,7 @@ const moveTobag=(data,id)=>{
         <div className={styles.wishlists}>
   {items?.map(({id,images,discount,discounted_price,strike_price,subtitle},i)=>{
     
-    return <div key={id} className={styles.singleW}>
+    return <div key={i} className={styles.singleW}>
         <div>
             <img src={images[0]} alt="" />
             <div onClick={()=>deleteFunc(id)} className={styles.delete}>

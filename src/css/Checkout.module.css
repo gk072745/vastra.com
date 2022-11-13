@@ -134,6 +134,9 @@ font-size: 18px;
 color: #282c3f ;
 }
 
+.titles>div:first-child>p{
+    cursor: pointer;
+}
 
 .sub{
     font-weight: 400;

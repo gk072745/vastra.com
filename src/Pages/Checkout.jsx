@@ -2,11 +2,10 @@ import styles from "../css/Checkout.module.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faMagnifyingGlass,faSackDollar,faUser,faHeart,faBagShopping,faTruck} from '@fortawesome/free-solid-svg-icons';
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import CheckoutProd from "../Components/checkoutProd";
 import { Navigate, useNavigate } from "react-router-dom";
-import { AuthContext } from "../Context/AuthContextProvider";
 library.add(faMagnifyingGlass,faSackDollar,faUser,faHeart,faBagShopping,faTruck)
 
 
@@ -15,16 +14,13 @@ export default function Checkout(){
   const [total,setTotal]=useState(0)
   const [TotalMrp,setTotalMrp]=useState(0)
   const navigate=useNavigate()
-  const {setBag}=useContext(AuthContext)
 
 useEffect(()=>{
 axios({
     method:"get",
     url:"https://pacific-plains-94481.herokuapp.com/api/Checkout",
-}).then((res)=> {setItems(res.data);setBag(items.length)})
-
+}).then((res)=> setItems(res.data))
 },[])
-
 
 const removeFunc=(id,sell,mrp)=>{
     axios({
@@ -36,8 +32,8 @@ const removeFunc=(id,sell,mrp)=>{
         axios({
             method:"get",
             url:"https://pacific-plains-94481.herokuapp.com/api/Checkout",
-        }).then((res)=> {setItems(()=>res.data);setBag(items.length)})
-        
+        }).then((res)=> setItems(res.data))
+
     })
 
     setTotal((prev)=>prev-sell)
@@ -49,7 +45,7 @@ const removeFunc=(id,sell,mrp)=>{
     return <>
    <nav className={styles.nav}>
     <div>
-    <img src="http://localhost:3000/static/media/Myntra.64e73cf807ba3072649f.png" alt="" />
+    <img onClick={()=>navigate("/")} src="http://localhost:3000/static/media/Myntra.64e73cf807ba3072649f.png" alt="" />
     </div>
     <div>
       <p>BAG</p>
@@ -90,8 +86,8 @@ const removeFunc=(id,sell,mrp)=>{
    <div className={styles.prods}>
                 {
                    
-                    items.map(({images,category,title,subtitle,strike_price,discounted_price,discount,size})=>{
-                        return <CheckoutProd TotalMrp={TotalMrp} setTotalMrp={setTotalMrp} total={total} setTotal={setTotal} images={images} category={category} title={title} subtitle={subtitle} strike_price={strike_price} size={size} discount={discount} discounted_price={discounted_price} />
+                    items.map(({images,category,title,subtitle,strike_price,discounted_price,discount,size,id})=>{
+                        return <CheckoutProd removeFunc={removeFunc} key={id} id={id} TotalMrp={TotalMrp} setTotalMrp={setTotalMrp} total={total} setTotal={setTotal} images={images} category={category} title={title} subtitle={subtitle} strike_price={strike_price} size={size} discount={discount} discounted_price={discounted_price} />
                     })
                 }
    </div>
@@ -144,9 +140,9 @@ const removeFunc=(id,sell,mrp)=>{
 
      <div className={styles.totalPrc}>
         <p>Total Amount</p>
-        <span>₹ {total-99}</span>
+        <span>₹ {total<=0?0:total-99}</span>
      </div>
-     <div onClick={()=>navigate("/cradit")}  className={styles.placeX}>  <p> PLACE ORDER</p></div>
+     <div onClick={()=>{if(items.length!==0)return navigate("/cradit")}}  className={styles.placeX}>  <p> PLACE ORDER</p></div>
      </div>
    </div>
 
