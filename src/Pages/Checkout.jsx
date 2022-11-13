@@ -2,7 +2,6 @@ import styles from "../css/Checkout.module.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faMagnifyingGlass,faSackDollar,faUser,faHeart,faBagShopping,faTruck} from '@fortawesome/free-solid-svg-icons';
-import { useEffect, useState } from "react";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Context/AuthContextProvider";
 import axios from "axios";
