@@ -100,7 +100,7 @@ return <div className={styles.stick}>
    <div onClick={()=>navigate("/checkout/cart")}>
     <p>Orders</p>
    </div>
-   <div onClick={()=>navigate("/wishlish")}>
+   <div onClick={()=>navigate("/wishlist")}>
         <p>Wishlist</p>
    </div>
    <div>
