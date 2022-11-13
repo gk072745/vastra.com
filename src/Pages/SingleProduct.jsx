@@ -12,10 +12,10 @@ library.add(faMagnifyingGlass,faUser,faHeart,faBagShopping,faTruck)
 export default function SingleP(){
   const sizeRef=useRef(null)
   const navigate=useNavigate()
-    const {singlePageData}=useContext(AuthContext)
+    const {singlePageData,isAuth}=useContext(AuthContext)
     const {images,title,subtitle,rating,rating_count,size,discounted_price,discount,strike_price}=singlePageData
     console.log(singlePageData)
-
+  
 
     return <>
     
@@ -70,12 +70,12 @@ export default function SingleP(){
         <p>SIZE CHART  &#62; </p>
       </div>
         <div className={styles.sizes}>
-        <button onClick={()=>{sizeRef.current=size[0]}}  disabled={!size.includes("XS")} >26</button>
-         <button  onClick={()=>{sizeRef.current=size[1]}}   disabled={!size.includes("S")}>27</button>
-         <button  onClick={()=>{sizeRef.current=size[2]}}   disabled={!size.includes("M")}>28</button>
-         <button  onClick={()=>{sizeRef.current=size[3]}}   disabled={!size.includes("L")}>30</button>
-         <button  onClick={()=>{sizeRef.current=size[4]}}   disabled={!size.includes("XL")}>32</button>
-         <button  onClick={()=>{sizeRef.current=size[5]}}   disabled={!size.includes("XXL")}>34</button>
+        <button onClick={()=>{sizeRef.current=size[0]}}  disabled={!size.includes("XS")} >{size[0]}</button>
+         <button  onClick={()=>{sizeRef.current=size[1]}}   disabled={!size.includes("S")}>{size[1]}</button>
+         <button  onClick={()=>{sizeRef.current=size[2]}}   disabled={!size.includes("M")}>{size[2]}</button>
+         <button  onClick={()=>{sizeRef.current=size[3]}}   disabled={!size.includes("L")}>{size[3]}</button>
+         <button  onClick={()=>{sizeRef.current=size[4]}}   disabled={!size.includes("XL")}>{size[4]}</button>
+         <button  onClick={()=>{sizeRef.current=size[5]}}   disabled={!size.includes("XXL")}>{size[5]}</button>
         </div>
 
         <div className={styles.cart}>
@@ -88,24 +88,25 @@ export default function SingleP(){
                data:{
                 ...singlePageData,size:sizeRef.current
                }
+            }).then((res)=>{
+            return navigate("/checkout/cart")
+
             })
 
-            return navigate("/checkout/cart")
             }}>
             <FontAwesomeIcon  style={{padding:"0px"}} icon="fa-bag-shopping" />
             <p>ADD TO BAG</p>
             </div>
             <div onClick={()=>{
-              if(!sizeRef.current) return
+              if(!isAuth)return navigate("/login")
               axios({
                method:"post",
                url:"https://pacific-plains-94481.herokuapp.com/api/Wishlist",
-               data:{
-                ...singlePageData,size:sizeRef.current
-               }
+                data:{
+                  ...singlePageData
+                }
             })
 
-            return navigate("/Wishlist")
             }}>
                <FontAwesomeIcon style={{padding:"0px"}} icon="fa-heart"/>
                <p>WISHLIST</p>
