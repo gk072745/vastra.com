@@ -1,70 +1,45 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# doubtful-bell-2631 - (Myntra Clone)
 
-## Available Scripts
+Myntra is an e-commerce website where people can buy from wide range of products and has an interactive UI. 
 
-In the project directory, you can run:
+A individual project built by Govind Kumawat (Me) in 5 days.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![Logo](https://img.mensxp.com/media/content/2021/Jan/People-Try-To-Find-Other-Secretly-Offensive-Logos1400_60165ada60850.jpeg)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Demo  🎥
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Deployed Link:- [Enjoy the Experience](https://doubtful-bell-2631.netlify.app/)
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Tech Stack 💻
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- HTML5
+- CSS
+- JAVASCRIPT
+- REACT
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+** External - Swiper.js**
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Features ✨
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Authentication process undercover with Context-API & OTP.
+- Pagination for some category.
+- Dynamic Products, Wishlist page using locally created json data.
+- All the product description, prices, discounts, are updated in real time.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Responsibilities 💪
 
-## Learn More
+- Landing page UI consisting of navbar, animated image cards and authentications i.e.; Login & Register 
+- Paginations for each sub-sections
+- Implementation of JS With Context Api on authentications
+- payment, checkout done with using React Hook (State) concepts.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Contributors 😇
+- 👤 [Govind Kumawat](https://www.github.com/gk072745)
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
