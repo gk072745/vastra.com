@@ -14,10 +14,8 @@ export default function Wishlist(){
             url:"https://pacific-plains-94481.herokuapp.com/api/Wishlist"
         }).then((res)=>setItems(res.data))
     },[])
-    console.log(items)
 
 const deleteFunc=(id)=>{
-    console.log(id)
     axios({
         method:"delete",
         url:"https://pacific-plains-94481.herokuapp.com/api/Wishlist/"+id

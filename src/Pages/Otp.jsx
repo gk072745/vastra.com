@@ -38,7 +38,6 @@ export default function Otp(){
 }
  
     }
-    console.log(length)
     return <>
 <div className={styles.bc}>
         

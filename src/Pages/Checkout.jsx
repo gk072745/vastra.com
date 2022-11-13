@@ -21,7 +21,6 @@ axios({
     url:"https://pacific-plains-94481.herokuapp.com/api/Checkout",
 }).then((res)=> setItems(res.data))
 },[])
-console.log(items)
 
 const removeFunc=(id,sell,mrp)=>{
     axios({
