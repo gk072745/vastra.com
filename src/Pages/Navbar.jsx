@@ -120,7 +120,8 @@ return <div className={styles.stick}>
                 </div>
                 <div  style={{cursor:"pointer"}}  onClick={()=>navigate("/checkout/cart")} className={styles.navpadding}>
                 <FontAwesomeIcon icon="fa-bag-shopping" />
-                <sup style={{padding:"2px 7px",fontSize:"10px",background:"#f16565",color:"white",borderRadius:"50px"}}>{isAuth?0:bag}</sup>
+                {console.log(bag,isAuth)}
+                <sup style={{padding:"2px 7px",fontSize:"10px",background:"#f16565",color:"white",borderRadius:"50px"}}>{isAuth?bag:0}</sup>
 <p>Bag</p>
                 </div>
             </div>

@@ -1,4 +1,5 @@
 import styles from "../css/Checkout.module.css"
+import Myntra from "../Images/Myntra.png"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faMagnifyingGlass,faSackDollar,faUser,faHeart,faBagShopping,faTruck} from '@fortawesome/free-solid-svg-icons';
@@ -47,7 +48,7 @@ const removeFunc=(id,sell,mrp)=>{
     return <>
    <nav className={styles.nav}>
     <div>
-    <img onClick={()=>navigate("/")} src="http://localhost:3000/static/media/Myntra.64e73cf807ba3072649f.png" alt="" />
+    <img onClick={()=>navigate("/")} src={Myntra} alt="" />
     </div>
     <div>
       <p>BAG</p>
