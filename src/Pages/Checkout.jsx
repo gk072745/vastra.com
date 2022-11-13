@@ -25,6 +25,7 @@ axios({
 
 },[])
 
+
 const removeFunc=(id,sell,mrp)=>{
     axios({
         method:"delete",
@@ -48,7 +49,7 @@ const removeFunc=(id,sell,mrp)=>{
     return <>
    <nav className={styles.nav}>
     <div>
-    <img onClick={()=>navigate("/")} src="http://localhost:3000/static/media/Myntra.64e73cf807ba3072649f.png" alt="" />
+    <img src="http://localhost:3000/static/media/Myntra.64e73cf807ba3072649f.png" alt="" />
     </div>
     <div>
       <p>BAG</p>
@@ -89,8 +90,8 @@ const removeFunc=(id,sell,mrp)=>{
    <div className={styles.prods}>
                 {
                    
-                    items.map(({images,category,title,subtitle,strike_price,discounted_price,discount,size,id})=>{
-                        return <CheckoutProd removeFunc={removeFunc} key={id} id={id} TotalMrp={TotalMrp} setTotalMrp={setTotalMrp} total={total} setTotal={setTotal} images={images} category={category} title={title} subtitle={subtitle} strike_price={strike_price} size={size} discount={discount} discounted_price={discounted_price} />
+                    items.map(({images,category,title,subtitle,strike_price,discounted_price,discount,size})=>{
+                        return <CheckoutProd TotalMrp={TotalMrp} setTotalMrp={setTotalMrp} total={total} setTotal={setTotal} images={images} category={category} title={title} subtitle={subtitle} strike_price={strike_price} size={size} discount={discount} discounted_price={discounted_price} />
                     })
                 }
    </div>
@@ -143,9 +144,9 @@ const removeFunc=(id,sell,mrp)=>{
 
      <div className={styles.totalPrc}>
         <p>Total Amount</p>
-        <span>₹ {total<=0?0:total-99}</span>
+        <span>₹ {total-99}</span>
      </div>
-     <div onClick={()=>{if(items.length!==0)return navigate("/cradit")}}  className={styles.placeX}>  <p> PLACE ORDER</p></div>
+     <div onClick={()=>navigate("/cradit")}  className={styles.placeX}>  <p> PLACE ORDER</p></div>
      </div>
    </div>
 

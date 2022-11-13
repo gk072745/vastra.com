@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import styles from "../css/Checkout.module.css"
 import axios from "axios"
 
-export default function CheckoutProd({removeFunc,TotalMrp,id,setTotalMrp,total,setTotal,images,category,title,subtitle,strike_price,discounted_price,discount,size}){
+export default function CheckoutProd({TotalMrp,setTotalMrp,total,setTotal,images,category,title,subtitle,strike_price,discounted_price,discount,size}){
     const [qnt,setQnt]=useState(1)
     const [mrp,setMrp]=useState( +strike_price)
     const [sellPrc,setSellPRc]=useState( +discounted_price)
@@ -22,7 +22,6 @@ const handleQnt=(q)=>{
 
 }
 
-
     return <>
     <div>
                             <div>
@@ -32,7 +31,7 @@ const handleQnt=(q)=>{
            <div className={styles.titles}>
                <div>
                 <span>{title}</span>
-                <p onClick={()=>removeFunc(id,sellPrc,mrp)}>&#x2715;</p>
+                <p>&#x2715;</p>
               </div>
                                 <p className={styles.sub}>{subtitle}</p>
                                 <p className={styles.cat}>Category: {category}</p>
