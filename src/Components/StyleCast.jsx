@@ -13,7 +13,6 @@ export default function StyleCast(){
 
     return <>
    
-   
 <div className={styles.margins}>
 <h1>STYLECAST HOTTEST FINDS</h1>   
    <div className={styles.daydeal}>

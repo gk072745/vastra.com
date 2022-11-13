@@ -10,9 +10,7 @@ export default function TrendsHim(){
           }).then((res)=>setData(res.data))
     },[])
 
-
     return <>
-   
    
 <div className={styles.margins}>
 <h1>TRENDS FOR HIM</h1>   

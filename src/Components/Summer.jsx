@@ -12,9 +12,7 @@ import styles from "../css/Home.module.css"
           }).then((res)=>setData(res.data))
     },[])
 
-
     return <>
-   
    
 <div className={styles.margins}>
 <h1>SPRING SUMMER 2022- FIRST ON MYNTRA</h1>   

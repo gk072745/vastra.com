@@ -14,8 +14,8 @@ import { useNavigate } from "react-router-dom";
     },[])
 
 
+
     return <>
-   
    
 <div className={styles.margins}>
 <h1>BIGGEST DEALS ON TOP BRANDS</h1>   

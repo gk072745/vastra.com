@@ -15,7 +15,6 @@ import styles from "../css/Home.module.css"
 
     return <>
    
-   
 <div className={styles.margins}>
 <h1>MYNTRA LUXE</h1>   
    <div className={styles.ExlusiveB}>

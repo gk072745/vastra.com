@@ -17,7 +17,6 @@ import { useNavigate } from "react-router-dom";
 
     return <>
    
-   
 <div className={styles.margins}>
 <h1>BRANDS AT SLASHED PRICES</h1>   
    <div className={styles.slashed}>

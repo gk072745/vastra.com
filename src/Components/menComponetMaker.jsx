@@ -14,8 +14,8 @@ export default function MensComponentMaker(props){
             url:`https://pacific-plains-94481.herokuapp.com/api/${data}`
           }).then((res)=>setProd(res.data))
     },[])
+    
     return <>
-   
    
     <div className={styles.margins}>
     <h1>{heading}</h1>   

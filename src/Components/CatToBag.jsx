@@ -16,8 +16,6 @@ import { useNavigate } from "react-router-dom";
 
 
     return <>
-   
-   
 <div className={styles.margins}>
 <h1>CATEGORIES TO BAG</h1>   
    <div className={styles.ExlusiveB}>

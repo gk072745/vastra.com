@@ -15,9 +15,9 @@ export default function ChildComponentMaker(props){
             url:`https://pacific-plains-94481.herokuapp.com/api/${data}`
           }).then((res)=>setProd(res.data))
     },[])
+    
     return <>
-   
-   
+  
     <div className={styles.margins}>
     <h1>{heading}</h1>   
        <div className={id<2||id==5?styles.flex:id==3||id==4?styles.grid2:styles.grid1}>

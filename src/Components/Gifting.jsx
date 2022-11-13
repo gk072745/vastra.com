@@ -13,7 +13,6 @@ export default function Gifting(){
 
     return <>
    
-   
 <div className={styles.margins}>
 <h1>GIFTING CARDS</h1>   
    <div className={styles.daydeal}>

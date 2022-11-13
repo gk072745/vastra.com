@@ -23,9 +23,7 @@ const handleQnt=(q)=>{
 }
 
 
-
     return <>
-    
     <div>
                             <div>
                                 <img src={images} alt="" />

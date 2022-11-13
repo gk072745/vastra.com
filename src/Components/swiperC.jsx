@@ -17,6 +17,8 @@ export default function SwiperC(){
     url:"https://pacific-plains-94481.herokuapp.com/api/slideC"
   }).then((res)=>setData(res.data))
   },[])
+
+  
     return (
         <>
           <Swiper
