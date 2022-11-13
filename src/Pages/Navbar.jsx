@@ -97,7 +97,7 @@ return <div className={styles.stick}>
     {isAuth? <button onClick={()=>setisAuth(false)}>LOGOUT</button>   :<button onClick={()=>navigate("/login")}>LOGIN/SIGNUP</button>}
 </div>
 
-   <div onClick={()=>navigate("/bag")}>
+   <div onClick={()=>navigate("/checkout/cart")}>
     <p>Orders</p>
    </div>
    <div onClick={()=>navigate("/wishlish")}>
