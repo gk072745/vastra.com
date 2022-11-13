@@ -16,7 +16,7 @@ A individual project built by Govind Kumawat (Me) in 5 days.
 
 ## Tech Stack 💻
 
-- HTML5
+- HTML
 - CSS
 - JAVASCRIPT
 - REACT
