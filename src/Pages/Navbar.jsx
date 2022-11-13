@@ -17,7 +17,7 @@ export default function Navbar(){
  const focusRef=useRef(null)
  const [dropdwn,setdropdwn]=useState(false)
  const navigate=useNavigate()
- const {isAuth,setisAuth}=useContext(AuthContext)
+ const {isAuth,setisAuth,bag,setBag}=useContext(AuthContext)
  const activeB=(x)=>{
    if(x){
       focusRef.current.className=styles.activeB
@@ -120,7 +120,7 @@ return <div className={styles.stick}>
                 </div>
                 <div  style={{cursor:"pointer"}}  onClick={()=>navigate("/checkout/cart")} className={styles.navpadding}>
                 <FontAwesomeIcon icon="fa-bag-shopping" />
-                <sup style={{padding:"2px 7px",fontSize:"10px",background:"#f16565",color:"white",borderRadius:"50px"}}>1</sup>
+                <sup style={{padding:"2px 7px",fontSize:"10px",background:"#f16565",color:"white",borderRadius:"50px"}}>{bag}</sup>
 <p>Bag</p>
                 </div>
             </div>

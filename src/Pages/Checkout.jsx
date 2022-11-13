@@ -2,10 +2,11 @@ import styles from "../css/Checkout.module.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faMagnifyingGlass,faSackDollar,faUser,faHeart,faBagShopping,faTruck} from '@fortawesome/free-solid-svg-icons';
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import CheckoutProd from "../Components/checkoutProd";
 import { Navigate, useNavigate } from "react-router-dom";
+import { AuthContext } from "../Context/AuthContextProvider";
 library.add(faMagnifyingGlass,faSackDollar,faUser,faHeart,faBagShopping,faTruck)
 
 
@@ -14,12 +15,14 @@ export default function Checkout(){
   const [total,setTotal]=useState(0)
   const [TotalMrp,setTotalMrp]=useState(0)
   const navigate=useNavigate()
+  const {setBag}=useContext(AuthContext)
 
 useEffect(()=>{
 axios({
     method:"get",
     url:"https://pacific-plains-94481.herokuapp.com/api/Checkout",
-}).then((res)=> setItems(res.data))
+}).then((res)=> {setItems(res.data);setBag(items.length)})
+
 },[])
 
 const removeFunc=(id,sell,mrp)=>{
@@ -32,8 +35,8 @@ const removeFunc=(id,sell,mrp)=>{
         axios({
             method:"get",
             url:"https://pacific-plains-94481.herokuapp.com/api/Checkout",
-        }).then((res)=> setItems(res.data))
-
+        }).then((res)=> {setItems(()=>res.data);setBag(items.length)})
+        
     })
 
     setTotal((prev)=>prev-sell)

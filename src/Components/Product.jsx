@@ -1,4 +1,5 @@
 import styles from "../css/product.module.css";
+import axios from "axios";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faMagnifyingGlass,faUser,faHeart,faBagShopping} from '@fortawesome/free-solid-svg-icons';
@@ -7,7 +8,6 @@ import { useNavigate } from "react-router-dom";
 import {useContext} from "react"
 import { AuthContext } from "../Context/AuthContextProvider";
 library.add(faMagnifyingGlass,faUser,faHeart,faBagShopping)
-import axios from "axios";
  
 
 export default function Product({item,id}){

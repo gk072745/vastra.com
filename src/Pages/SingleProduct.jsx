@@ -14,7 +14,7 @@ export default function SingleP(){
   const navigate=useNavigate()
     const {singlePageData,isAuth}=useContext(AuthContext)
     const {images,title,subtitle,rating,rating_count,size,discounted_price,discount,strike_price}=singlePageData
-  
+   const {bag,setBag}=useContext(AuthContext)
 
     return <>
     
@@ -88,8 +88,9 @@ export default function SingleP(){
                 ...singlePageData,size:sizeRef.current
                }
             }).then((res)=>{
+              setBag((prev)=>prev+1)
             return navigate("/checkout/cart")
-
+            
             })
 
             }}>
