@@ -1,6 +1,6 @@
-import axios from "axios"
 import { useEffect, useState } from "react"
 import styles from "../css/Checkout.module.css"
+import axios from "axios"
 
 export default function CheckoutProd({removeFunc,TotalMrp,id,setTotalMrp,total,setTotal,images,category,title,subtitle,strike_price,discounted_price,discount,size}){
     const [qnt,setQnt]=useState(1)

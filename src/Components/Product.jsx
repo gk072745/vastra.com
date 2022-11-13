@@ -6,9 +6,9 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {useContext} from "react"
 import { AuthContext } from "../Context/AuthContextProvider";
-import axios from "axios";
 library.add(faMagnifyingGlass,faUser,faHeart,faBagShopping)
-
+import axios from "axios";
+ 
 
 export default function Product({item,id}){
   const {setSinglePageData}=useContext(AuthContext)
