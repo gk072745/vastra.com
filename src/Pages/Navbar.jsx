@@ -39,7 +39,7 @@ return <div className={styles.stick}>
 
   <div>
        <div>
-           <img src={Myntra} onClick={()=>navigate("/")} width="45px" height={"45px"} alt="" />
+           <img src={"https://doubtful-bell-2631.netlify.app/static/media/Myntra.64e73cf807ba3072649f.png"} onClick={()=>navigate("/")} width="45px" height={"45px"} alt="" />
        </div>
        <div>
           <div  onClick={()=>navigate("/men")} className={styles.navpadding}>

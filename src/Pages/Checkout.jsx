@@ -48,7 +48,7 @@ const removeFunc=(id,sell,mrp)=>{
     return <>
    <nav className={styles.nav}>
     <div>
-    <img onClick={()=>navigate("/")} src={Myntra} alt="" />
+    <img onClick={()=>navigate("/")} src={"https://doubtful-bell-2631.netlify.app/static/media/Myntra.64e73cf807ba3072649f.png"} alt="" />
     </div>
     <div>
       <p>BAG</p>
