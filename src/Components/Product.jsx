@@ -6,7 +6,6 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {useContext} from "react"
 import { AuthContext } from "../Context/AuthContextProvider";
-import axios from "axios";
 library.add(faMagnifyingGlass,faUser,faHeart,faBagShopping)
 
 
@@ -15,7 +14,7 @@ export default function Product({item,id}){
     const navigate=useNavigate()
     const [showWish,setShowWish]=useState(false)
     const {images,rating,rating_count,title,subtitle,strike_price,discounted_price,discount,size}=item
-    const {isAuth}=useContext(AuthContext)
+
  const singlePgNav=(data)=>{
    navigate(`/single/${id}`)
    setSinglePageData(item)
@@ -38,19 +37,7 @@ export default function Product({item,id}){
        
        
        <div>
-        {showWish&&<div className={styles.hoverWish} onClick={()=>{
-          if(!isAuth) return navigate("/login")
-        axios({
-          method:"post",
-          url:"https://pacific-plains-94481.herokuapp.com/api/Wishlist",
-          data:{
-            ...item
-          }
-        })
-         
-
-
-        }}>
+        {showWish&&<div className={styles.hoverWish} onClick={()=>console.log("w")}>
             <div className={styles.wishlist}>
             <FontAwesomeIcon  icon="fa-heart" />
             <div className={styles.wishlistWord}>
