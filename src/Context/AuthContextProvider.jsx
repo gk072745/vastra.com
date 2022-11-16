@@ -6,9 +6,10 @@ import { createContext, useEffect, useState } from "react"
 export const AuthContext=createContext()
 
 function AuthContextProvider({children}){
-    const [isAuth,setisAuth]=useState(false)
+    const [isAuth,setisAuth]=useState(JSON.parse(localStorage.getItem('Auth'))||false)
     const [bag,setBag]=useState(0)
     const [singlePageData,setSinglePageData]=useState({})
+    const [data,setData]=useState([])
   useEffect(()=>{
     axios({
         method:"get",
@@ -16,7 +17,12 @@ function AuthContextProvider({children}){
     }).then((res)=>setBag(res.data.length))
   })
     
-    const value={bag,setBag,isAuth,setisAuth,singlePageData,setSinglePageData}
+    const value={bag,setBag,data,setData,isAuth,setisAuth,singlePageData,setSinglePageData}
+
+    useEffect(() => {
+      localStorage.setItem('Auth', JSON.stringify(isAuth));
+    }, [isAuth])
+
 
     return (
 

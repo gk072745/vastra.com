@@ -1,8 +1,9 @@
 import styles from "../css/store.module.css"
-import React, { useEffect, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import { useParams,Navigate, useSearchParams } from "react-router-dom"
 import axios from "axios"
 import Product from "../Components/Product"
+import { AuthContext } from "../Context/AuthContextProvider"
 
 const GetfilterData=(type="",page=1,cat)=>{
     return axios({
@@ -56,18 +57,50 @@ export default function Store(){
     const initQ=searchParams.get("q")||""
     const initType= searchParams.get("type")||""
     const [page,setPage]=React.useState(initPage)
+    const [pageQ,setPageQ]=React.useState(initPage)
     const [lastPage,setLastPAge]=useState(page)
     const [total,setTotal]=useState("...")
-    const [data,setData]=useState([])
+    const {data,setData}=useContext(AuthContext)
     const [type,setType]=useState(initType)
     const [q,setQ]=useState(initQ)
+    const [searchQ,setSerchQ]=useState(false)
      
+ useEffect(()=>{
+    setQ((prev)=>(prev=initQ))
+
+ },[initQ])
+    useEffect(()=>{
+   if(q){
+    axios({
+        method:"get",
+        url:"https://pacific-plains-94481.herokuapp.com/api/clothing",
+        params:{
+            q,
+            _page:pageQ,
+            _limit:20
+        }
+    }).then((res)=>{setData(res.data);});
+    setSerchQ(true)
+
+   }
+        axios({
+method:"get",
+url:"https://pacific-plains-94481.herokuapp.com/api/clothing",
+params:{
+    q
+}
+
+        }).then((res)=>{setTotal(res.data.length); let lastPage=Math.ceil(res.data.length/20) ;setLastPAge(lastPage)})
+      },[q,pageQ])
 
 
 useEffect(()=>{
     if(type)   getData(type,page).then((res)=>setData(res.data))
   else  queryData(q).then((res)=>setData(res.data))
-},[page,type])
+
+  setSerchQ(false)
+},[type,page])
+
 
 
 useEffect(()=>{
@@ -89,13 +122,9 @@ if(type){
         }
     }).then((res)=>{setTotal(res.data.length); let lastPage=Math.ceil(res.data.length/20) ;setLastPAge(lastPage) })
 }
-},[type,q])
+setSerchQ(false)
+},[type,page])
 
-useEffect(()=>{
-setSearchParams({
-    page,type,q
-})
-},[page,type,q])
 
 const SearchData=(cat)=>{
     setType(cat)
@@ -236,9 +265,9 @@ const  getfilterBrand=(title)=>{
     
 
 <div className={styles.pgn}>
-    <button disabled={page==1} onClick={()=>setPage(page-1)} >PREV</button>
-    <button>{page}</button>
-    <button disabled={page==lastPage} onClick={()=>setPage(page+1)}>NEXT</button>
+    <button disabled={searchQ?pageQ==1:page==1} onClick={()=>{searchQ?setPageQ(pageQ-1):setPage(page-1)}} >PREV</button>
+    <button>{searchQ?pageQ:page}</button>
+    <button disabled={searchQ?pageQ==lastPage:page==lastPage} onClick={()=>{searchQ?setPageQ(pageQ+1):setPage(page+1)}}>NEXT</button>
 </div>
     
     </div>
