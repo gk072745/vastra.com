@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom"
 
 
 export default function Otp(){
+   const [otpVal,setOtp]=useState(Math.floor(1000 + Math.random() * 9000))
   const [mb,setMb]=useState("*******")
   const [otp,setotp]=useState([])
   const [length,setlen]=useState(0)
@@ -17,8 +18,15 @@ export default function Otp(){
         axios({
             method:"get",
             url:"https://pacific-plains-94481.herokuapp.com/api/mb"
-        }).then((res)=>setMb(res.data.mobile))
+        }).then((res)=>{setMb(res.data.mobile);
+
+        })
     },[])
+
+
+    useEffect(()=>{
+        alert("Your otp is "+ otpVal)
+    },[otpVal])
 
     const otpCheck=(e)=>{
         let arr=otp
@@ -32,7 +40,8 @@ export default function Otp(){
 
  }
  setlen(otp.length)
-    if(otp.length==4&& otp.join("")=="1234"){
+
+    if(otp.length==4&& otp.join("")==otpVal){
          setisAuth(true)
          return navigate("/")
 }
@@ -57,7 +66,7 @@ export default function Otp(){
          <input readOnly={length<3} onChange={(e)=>otpCheck(e)}  name="3" className={styles.OtpAuthInputs} type="text" maxLength="1" />
         </div>
 
-        <div className={styles.otpSend}>
+        <div className={styles.otpSend} onClick={()=>setOtp(Math.floor(1000 + Math.random() * 9000))}>
             Resent OTP
         </div>
         <div className={styles.xtraThings}>
