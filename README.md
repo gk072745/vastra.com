@@ -11,7 +11,6 @@ A individual project built by Govind Kumawat (Me) in 5 days.
 
 ## Demo  🎥
 
-- OTP 1234
 - Deployed Link:- [Enjoy the Experience](https://doubtful-bell-2631.netlify.app/)
 
 
