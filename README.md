@@ -6,7 +6,7 @@ Myntra is an e-commerce website where people can buy from wide range of products
 A individual project built by Govind Kumawat in 5 days.
 
 
-![Logo]([https://img.mensxp.com/media/content/2021/Jan/People-Try-To-Find-Other-Secretly-Offensive-Logos1400_60165ada60850.jpeg](https://uploadnow.io/files/L01F49P]))
+![Logo]([https://i.ibb.co/rwVGSWx/doubtful.png))
 
 
 ## Demo  🎥
