@@ -89,6 +89,11 @@ export const Navbar = () => {
 <Box 
 w={"100%"}
 boxShadow={"md"}
+position={"sticky"}
+top={0}
+zIndex={"20"}
+bgColor="rgba(255, 255, 255, 0.97)"
+
 >
 <HStack
  w={"95%"}
@@ -106,7 +111,7 @@ boxShadow={"md"}
      w="100px"
      alt="logo"
      fallbackSrc={"https://vastra-com.netlify.app/static/media/logo.907393fa26947a42ac8a.png"}
-     cursor="pointer"nnetlify deploy
+     cursor="pointer"
      />
     </Box>
 

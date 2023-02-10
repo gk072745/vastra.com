@@ -87,9 +87,8 @@ useEffect(()=>{
   
   <VStack alignItems={"flex-start"}
   spacing={1}
+  top={"9%"}
   position={"sticky"}
-  top={"7%"}
-  bottom={"1000px"}
    >
     <HStack 
       mt={"8px"}
