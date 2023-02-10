@@ -1,89 +1,83 @@
-import axios from "axios"
-import { useContext, useEffect, useState } from "react"
-import { AuthContext } from "../Context/AuthContextProvider"
-import styles from "../css/wishlist.module.css"
+import { Box ,HStack,SimpleGrid,Text} from '@chakra-ui/react'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
+import Footer from '../Components/Footer'
+import Navbar from '../Components/Navbar'
+import SingleWishlistProduct from '../Components/SingleWishlistProduct'
 
+const Wishlist = () => {
+ const [wishlist,setWishlist]=useState([])
 
+ const getWishlitProd=()=>{
+  
+      axios({
+        method:"get",
+        url:process.env.REACT_APP_MYNTRA_API+"/wishlist"
+   }).then((res)=>setWishlist(res.data))
+ . catch((err)=>{
+  console.log(err)
+ })
+ }
 
-export default function Wishlist(){
-    const [items,setItems]=useState([])
-  const {setBag}=useContext(AuthContext)
-
-    useEffect(()=>{
-        axios({
-            method:"get",
-            url:"https://pacific-plains-94481.herokuapp.com/api/Wishlist"
-        }).then((res)=>setItems(res.data))
-    },[])
-
-const deleteFunc=(id)=>{
+ useEffect(()=>{
+    getWishlitProd()
+ },[wishlist.length,setWishlist,])
+ 
+const handleDelete=(id)=>{
     axios({
-        method:"delete",
-        url:"https://pacific-plains-94481.herokuapp.com/api/Wishlist/"+id
-    }).then((res)=>{
-        axios({
-            method:"get",
-            url:"https://pacific-plains-94481.herokuapp.com/api/Wishlist"
-        }).then((res)=>setItems(res.data))
-    })
+                  method:"delete",
+                  url:process.env.REACT_APP_MYNTRA_API+"/wishlist/"+id
+             }).then((res)=>getWishlitProd())
+               .catch((err)=>{
+                console.log(err)
+               })
+
 }
 
-const moveTobag=(data,id)=>{
-  delete data.id
+const handleAddCart=(el)=>{
   axios({
     method:"post",
-    url:"https://pacific-plains-94481.herokuapp.com/api/Checkout",
-    data:{
-        ...data
-    }
-  }).then((res)=>{
-    deleteFunc(id)
-    setBag((count)=>count+1);
+    url:process.env.REACT_APP_MYNTRA_API+"/cart",
+    data:{...el,currentSize:el.size[0]}
+}).then((res)=>{
+  handleDelete(el.id)
+}).catch((err)=>{
+  handleDelete(el.id)
+})
+}
+  return (
+   <>
+   <Navbar/>
+   {/* .................. */}
 
-  })
+   <Box
+  w={"full"}
+  p={"50px 50px"}
+  >
+
+              <HStack spacing={"5px"}>
+              <Text fontSize={"18px"} fontWeight={500} color={"#282c3f"}>My Wishlist</Text>
+              <Text fontSize={"17px"} fontWeight={400} color={"#b2b4b9"}>{wishlist.length} items</Text>
+              </HStack>
+              <SimpleGrid 
+              columns={5}
+              gap={"50px"}
+              mt={8}
+              mb={8}
+              >
+                       {
+wishlist?.map((el)=>{
+              return <SingleWishlistProduct  key={el.id} el={el} handleAddCart={handleAddCart} handleDelete={handleDelete} />
+})
+                       }     
+              </SimpleGrid>
+
+  </Box>
+
+  <Footer/>
+
+   </>
+  )
 }
 
-
-
-
-
-    return <>
-    
-     <div className={styles.main}>
-        <div>
-            <h3>My Wishlist</h3>
-            <h3>{items.length} item</h3>
-        </div>
-        <div className={styles.wishlists}>
-  {items?.map(({id,images,discount,discounted_price,strike_price,subtitle},i)=>{
-    
-    return <div key={i} className={styles.singleW}>
-        <div>
-            <img src={images[0]} alt="" />
-            <div onClick={()=>deleteFunc(id)} className={styles.delete}>
-            &#x2718; 
-            </div>
-        </div>
-        <div className={styles.dtl}>
-          <div>
-            <p>{subtitle}</p>
-          </div>
-         
-          <div className={styles.prc}>
-            <p>Rs.{discounted_price}</p>
-            <span>Rs.{strike_price}</span>
-            <p>{discount}</p>
-          </div>
-
-          <div className={styles.checkout} onClick={()=>moveTobag(items[i],id)}>
-            MOVE TO BAG
-          </div>
-
-        </div>
-    </div>
-  })}
-        </div>
-     </div>
-    
-    </>
-}
+export default Wishlist

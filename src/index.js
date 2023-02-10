@@ -3,21 +3,20 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { AuthContextProvider } from './Context/AuthContextProvider';
-import { ChakraProvider } from '@chakra-ui/react';
-import { BrowserRouter } from 'react-router-dom';
+import {ChakraProvider,theme} from "@chakra-ui/react";
+import { BrowserRouter } from "react-router-dom";
+import { store } from './Redux/Store';
+import { Provider } from "react-redux"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-
-<AuthContextProvider>
-<BrowserRouter>
-
-    <App />
-
-</BrowserRouter>
-</AuthContextProvider>
-
+    <ChakraProvider theme={theme}>
+      <BrowserRouter>
+        <Provider store={store}>
+          <App />
+        </Provider>
+      </BrowserRouter>
+    </ChakraProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

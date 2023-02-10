@@ -1,11 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
-import AllRoutes from './Routes/AllRoutes';
+import Signup from './Pages/Signup';
+import Otp from './Pages/Otp';
+import SingleProduct from './Pages/SingleProduct';
+import { Route, Routes } from 'react-router-dom';
+import Wishlist from './Pages/Wishlist';
+import { MainRoutes } from './Routes/Routes';
+import "./App.css"
 
 function App() {
   return (
     <div className="App">
-     <AllRoutes/>
+      <MainRoutes/>
     </div>
   );
 }
