@@ -72,7 +72,7 @@ axios({
   method:"post",
   data:el,
 }).then((res)=>{
-
+    handleCartProducts()
     toast({
           title: 'Product added in the cart.',
           description: el.title,
@@ -106,9 +106,6 @@ useEffect(()=>{
     if(!obj[el.id]){
       obj[el.id]=el.id
     }
-    if(!obj[el.title]){
-      obj[el.title]=el.title
-    }
   }
 
 if(similerProducts.length===0){
@@ -124,6 +121,7 @@ if(similerProducts.length===0){
     url:process.env.REACT_APP_MYNTRA_API+"/Products"
      }).then((res)=>{
        const newArr=res.data?.filter((el)=>{
+          
          return obj[el.category] && !obj[el.id]
           })
          

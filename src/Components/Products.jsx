@@ -22,7 +22,7 @@ const Products = () => {
       const q=searchParams.get("q")
       const getProductParams={
         params:{
-          type,category,brand,price,discount,q
+          type,category,brand,price_lte:price,discount_gte:discount,q
         }
 
       }

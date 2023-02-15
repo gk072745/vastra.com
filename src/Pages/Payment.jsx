@@ -1,15 +1,10 @@
-import { Box, Button, HStack, VStack,Input,Image,Text, FormControl,FormLabel,FormErrorMessage,FormHelperText, InputGroup, Center, Spinner,Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton,useDisclosure, Heading, useToast } from '@chakra-ui/react'
+import { Box, Button, HStack, VStack,Input,Image,Text, FormControl,FormLabel,Center, Spinner,Modal, ModalOverlay, ModalContent,ModalBody,useDisclosure, Heading, useToast } from '@chakra-ui/react'
 import OtherNavbar from '../Components/OtherNavbar'
 import OtherFooter from '../Components/OtherFooter'
 import { useLocation, useNavigate } from 'react-router-dom'
-import { useEffect, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import warning from "../Assets/warning.png"
+import axios from 'axios'
 
 
 const Payment = () => {
@@ -39,6 +34,14 @@ const Payment = () => {
   name.length>2&& +name!=name&&cardNm.length===12&& +cardNm==cardNm && +cardNm>9999999999&&cvc.length>2&& +cvc==cvc&&
   +cvc>99&&+month &&+month<13&&currentYear<= +year&& +year-currentYear<10
   ){
+    axios({
+      method:"post",
+      url: process.env.REACT_APP_MYNTRA_API + "/cart",
+    })
+   
+
+
+
 setTimeout(()=>{
   setCheck((prev)=>({...prev,status:true,isloading:false}))
   toast({

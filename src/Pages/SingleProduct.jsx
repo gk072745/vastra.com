@@ -10,6 +10,19 @@ import {CiHeart} from "react-icons/ci"
 import axios from 'axios'
 import SingleProductCom from '../Components/SingleProductCom'
 
+const style={
+hover:{transform:"scale(110%)",
+transition:"transform 1s, filter .20s ease-in-out",
+transformOrigin:"center center",
+filter: "brightness(95%)"},
+
+style:{
+
+overflow: "hidden"
+}
+}
+
+
 
 const SingleProduct = () => {
    const dispatch=useDispatch()
@@ -178,8 +191,8 @@ p={"15px 30px"}>
           >
           {
             images?.map((img,i)=>{
-              return   <Box w="full" key={i}>
-                                 <Image  src={img} w="full" />
+              return   <Box  style={style.style}  w="full" key={i}>
+                                 <Image _hover={style.hover} src={img} w="full" />
                         </Box>
             })
           }

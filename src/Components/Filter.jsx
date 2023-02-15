@@ -87,8 +87,9 @@ useEffect(()=>{
   
   <VStack alignItems={"flex-start"}
   spacing={1}
-  top={"9%"}
   position={"sticky"}
+  top={"7%"}
+  bottom={"1000px"}
    >
     <HStack 
       mt={"8px"}
@@ -104,8 +105,7 @@ useEffect(()=>{
         <VStack alignItems={"flex-start"} spacing={1} >
             <Radio value='Men'>Men</Radio>
             <Radio value='Women'>Women</Radio>
-            <Radio value='Boys'>Boys</Radio>
-            <Radio value='Girl'>Girl</Radio>
+            <Radio value='Kids'>Kids</Radio>
         </VStack>
       </RadioGroup>
     </Box>

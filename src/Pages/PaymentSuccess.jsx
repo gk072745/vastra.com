@@ -1,8 +1,9 @@
 import OtherNavbar from '../Components/OtherNavbar';
 import OtherFooter from '../Components/OtherFooter';
 import { Box, Button, HStack, VStack,Image } from '@chakra-ui/react';
+import axios from 'axios';
 
-const PaymentSuccess = ({success}) => {
+const PaymentSuccess = () => {
 
 
   return (

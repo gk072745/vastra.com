@@ -1,4 +1,3 @@
-import axios from "axios";
 import * as types from "./ActionTypes";
 
 export const login = (logout) => (dispatch) => {
