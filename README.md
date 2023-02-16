@@ -61,42 +61,42 @@ To run this application on your local system
 
 ### Home Page and Footer
 
-  ![image](https://user-images.githubusercontent.com/61157473/208609356-61e1bafe-d490-4df8-bce0-07c0a2fca050.png)
+  ![image](./src/Assets/r1.png)
 
-  <img width="1000" alt="Footer" src="https://user-images.githubusercontent.com/97459069/200316035-a51c3fb1-2bfc-49f9-a0ad-cbf47ed5cfde.PNG">
+  <img width="1000" alt="Footer" src="./src/Assets/r2.png">
 ---
 
 ### Categories
 
-![image](https://user-images.githubusercontent.com/61157473/208609670-4a81b568-4639-4d90-bc83-71ad980e4c25.png)
+![image](./src/Assets/r3.png)
 
-![image](https://user-images.githubusercontent.com/61157473/208609810-594275fb-7184-40a7-99ac-a08d2f011a4e.png)
-![image](https://user-images.githubusercontent.com/61157473/208610610-9aa82556-ee73-4a85-b88b-706be57c6895.png)
+![image](./src/Assets/r4.png)
+![image](./src/Assets/r5.png)
 
 ---
 
 ### Products Section
 
-![image](https://user-images.githubusercontent.com/61157473/208610772-2a65fc95-7ca5-4fcb-abd4-a1210f816fb2.png)
-![image](https://user-images.githubusercontent.com/61157473/208610834-ab9e123d-adbf-4d16-929e-b5ba17aac40b.png)
+![image](./src/Assets/r6.png)
+![image](./src/Assets/r7.png)
 
 
 ### Login Page/Signup Page
 
-## <img width="1000" alt="login" src="https://user-images.githubusercontent.com/97459069/200316050-6c3c3fc3-f93d-4e3d-9c15-18ed51ddd7bc.PNG">
+## <img width="1000" alt="login" src="http./src/Assets/r8.png">
 
 ---
 ### Cart Section
-![image](https://user-images.githubusercontent.com/61157473/208611294-ca410a02-6722-4ff7-9014-f99371be2969.png)
+![image](./src/Assets/r9.png)
 
 
 ---
 ### Payment Section
-![image](https://user-images.githubusercontent.com/61157473/208611444-fc70a6e3-1292-4bf9-84de-a7fbf018992a.png)
+![image](./src/Assets/r10.png)
 
 
 
 
-##  Contributors
+##  Contributors (Individual)
 
 1. [Govind Kumawat](https://github.com/gk072745)
