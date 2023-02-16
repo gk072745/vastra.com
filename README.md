@@ -83,7 +83,7 @@ To run this application on your local system
 
 ### Login Page/Signup Page
 
-## <img width="1000" alt="login" src="http./src/Assets/r8.png">
+## <img width="1000" alt="login" src="./src/Assets/r8.png">
 
 ---
 ### Cart Section
