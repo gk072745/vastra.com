@@ -4,7 +4,6 @@ import OtherFooter from '../Components/OtherFooter'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useRef, useState } from 'react'
 import warning from "../Assets/warning.png"
-import axios from 'axios'
 
 
 const Payment = () => {
@@ -34,10 +33,7 @@ const Payment = () => {
   name.length>2&& +name!=name&&cardNm.length===12&& +cardNm==cardNm && +cardNm>9999999999&&cvc.length>2&& +cvc==cvc&&
   +cvc>99&&+month &&+month<13&&currentYear<= +year&& +year-currentYear<10
   ){
-    axios({
-      method:"post",
-      url: process.env.REACT_APP_MYNTRA_API + "/cart",
-    })
+    
    
 
 
@@ -147,7 +143,7 @@ const handleErrorMenu=()=>{
              </HStack>
              </VStack>
              <Box py={"15px"} w="full">
-             <Button colorScheme={"facebook"} w="100%" onClick={handlePayment}>COMPLETE ORDER </Button>
+             <Button colorScheme={"facebook"} w="100%" onClick={handlePayment}>Pay {totalAmount} </Button>
              </Box>
            </VStack>
           </FormControl>
